@@ -9,7 +9,7 @@ class Driver{
     }
 
     yearsExperienceFromBeginningOf(endDate){
-        console.log(startDate())
+        console.log(this.startDate())
         // return endDate - this.startDate().year
     }
 }
