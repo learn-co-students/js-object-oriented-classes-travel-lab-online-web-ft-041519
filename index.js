@@ -23,8 +23,6 @@ const eastWest = [
     '5th Avenue'
   ]
 
-  let begArr
-  let endArr
 
 class Route{
     constructor(beginningLocation, endingLocation){
@@ -32,15 +30,20 @@ class Route{
         this.endingLocation = endingLocation
     }
 
-    blocksTraveled(){
-        begArr = beginningLocation.split(" and ")
-        endArr = endingLocation.split(" and ")
-        console.log(begArr)
-    console.log(endArr)
+    blocksTravelled(){
+        let vertical = this.endingLocation.vertical - this.beginningLocation.vertical
+        let horizontal = (eastWest).indexOf(this.endingLocation.horizontal) - (eastWest).indexOf(this.beginningLocation.horizontal)
+        return vertical + horizontal
     }
 
-    estimatedTime(){
-
+    estimatedTime(peak){
+        let time
+        if (peak === true) {
+            time = this.blocksTravelled() / 2
+        } else {
+            time = this.blocksTravelled() / 3
+        }
+        return time
     }    
 
 }
