@@ -27,9 +27,9 @@ class Route{
         const horizDist = Math.abs(this.eastWest.indexOf(this.endingLocation["horizontal"]) - this.eastWest.indexOf(this.beginningLocation["horizontal"]));
         return verticalDist + horizDist;
     }
-  estimatedTime(timeofDay){
+  estimatedTime(peak){
     let time = this.blocksTravelled()
-    if (timeofDay === peak)
+    if (peak)
       return (time / 2)
     else
     return (time / 3)
